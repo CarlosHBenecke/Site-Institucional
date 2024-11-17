@@ -59,10 +59,8 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8102D8A95AF446A99F49FE87D66AC0C7 }}
 
       - name: Stop Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'QualABoa'
-          action: 'Stop'
+        run: |
+          az webapp stop --name QualABoa --resource-group qualaboa
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -73,7 +71,5 @@ jobs:
           package: ./build
 
       - name: Start Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'QualABoa'
-          action: 'Start'
+        run: |
+          az webapp start --name QualABoa --resource-group qualaboa
