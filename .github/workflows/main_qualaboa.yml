@@ -58,6 +58,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5DD1C47512A74988A7F77A36B90456E3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8102D8A95AF446A99F49FE87D66AC0C7 }}
 
+      - name: Stop Azure Web App
+        uses: azure/appservice-actions@v1
+        with:
+          app-name: 'QualABoa'
+          action: 'Stop'
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -65,3 +71,9 @@ jobs:
           app-name: 'QualABoa'
           slot-name: 'Production'
           package: ./build
+
+      - name: Start Azure Web App
+        uses: azure/appservice-actions@v1
+        with:
+          app-name: 'QualABoa'
+          action: 'Start'
