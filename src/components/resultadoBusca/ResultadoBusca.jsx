@@ -6,7 +6,7 @@ import apiBlob from "../../api-blob";
 import styles from "./ResultadoBusca.module.css";
 import Multiselect from 'multiselect-react-dropdown';
 import { useSearchParams, Link } from 'react-router-dom';
-import axios from "axios";
+
 
 function ResultadoBusca() {
 
@@ -28,7 +28,7 @@ function ResultadoBusca() {
   }, [searchParams]);
 
   const buscarDados = () => {
-    axios.post("http://minhaurl-api.com/establishments/listbyfilters", {
+    api.post("/establishments/listbyfilters", {
       categories,
       name: searchTerm,
     })

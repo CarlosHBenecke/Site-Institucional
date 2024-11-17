@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://minhaapi-auth.com"
+    baseURL: process.env.REACT_APP_API_AUTH_URL
 })
 
 export default api;
