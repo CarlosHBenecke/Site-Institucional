@@ -32,7 +32,7 @@ function MapComponent({ postalCode, number }) {
             {
               params: {
                 address,
-                key: "AIzaSyBfK8M_o3m3AH-NrY2KVjhSSZQD5lgly-I", // Substitua pela sua chave de API do Google Maps
+                key: "AIzaSyAtSP-uYqGNjGMbJbHuXdcRk8m97NW7PNg", // Substitua pela sua chave de API do Google Maps
               },
             }
           );
@@ -73,7 +73,7 @@ function MapComponent({ postalCode, number }) {
       <div style={{ height: "400px", width: "100%" }}>
         {coordinates.lat && coordinates.lng ? (
           <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyBfK8M_o3m3AH-NrY2KVjhSSZQD5lgly-I" }} // Substitua pela sua chave de API do Google Maps
+            bootstrapURLKeys={{ key: "AIzaSyAtSP-uYqGNjGMbJbHuXdcRk8m97NW7PNg" }} // Substitua pela sua chave de API do Google Maps
             defaultCenter={{ lat: coordinates.lat, lng: coordinates.lng }}
             defaultZoom={15}
             options={{
