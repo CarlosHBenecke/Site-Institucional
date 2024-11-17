@@ -69,6 +69,7 @@ jobs:
           app-name: 'QualABoa'
           slot-name: 'Production'
           package: ./build
+          force-deploy: true
 
       - name: Start Azure Web App
         run: |
