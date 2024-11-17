@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiBlob = axios.create({
-    baseURL: process.env.REACT_APP_API_BLOB_URL
+    baseURL: "http://minhaapi-blob.com"
 })
 
 export default apiBlob;
