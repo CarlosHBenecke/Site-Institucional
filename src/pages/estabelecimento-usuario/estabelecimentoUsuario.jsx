@@ -41,6 +41,7 @@ function MapComponent({ postalCode, number }) {
             const { lat, lng } = results[0].geometry.location;
             setCoordinates({ lat, lng });
           } else {
+            console.log(response)
             console.error("Endereço não encontrado");
           }
         } catch (error) {
