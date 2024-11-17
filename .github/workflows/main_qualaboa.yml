@@ -59,7 +59,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8102D8A95AF446A99F49FE87D66AC0C7 }}
 
       - name: Stop Azure Web App
-        uses: azure/appservice-actions@v1
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'QualABoa'
           action: 'Stop'
@@ -73,7 +73,7 @@ jobs:
           package: ./build
 
       - name: Start Azure Web App
-        uses: azure/appservice-actions@v1
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'QualABoa'
           action: 'Start'
