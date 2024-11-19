@@ -275,31 +275,48 @@ function EstabelecimentoUsuario() {
     }
 
     const Categorias = () => {
-        const musics = categorias.filter(cat => cat.categoryType === 1).map(cat => cat.name);
-        const foods = categorias.filter(cat => cat.categoryType === 2).map(cat => cat.name);
-        const drinks = categorias.filter(cat => cat.categoryType === 3).map(cat => cat.name);
+        var musics = [];
+        var foods = [];
+        var drinks = [];
+        if(categorias !== null) {
+            musics =categorias.filter(cat => cat.categoryType === 1).map(cat => cat.name);
+            foods = categorias.filter(cat => cat.categoryType === 2).map(cat => cat.name);
+            drinks = categorias.filter(cat => cat.categoryType === 3).map(cat => cat.name);
+        }
       
         return (
-          <div className={styles["category-cards"]}>
-            <div className={styles["card"]}>
-                <h2 style={{fontWeight: "bold", textAlign: "left"}}>Músicas 🎵</h2>
-              {musics.map(name => (
-                <p className={styles.description} key={name}>{name}</p>
-              ))}
+            <div className={styles["category-cards"]}>
+              <div className={styles["card"]}>
+                <h2 style={{ fontWeight: "bold", textAlign: "left" }}>Músicas 🎵</h2>
+                {musics.length > 0 ? (
+                  musics.map(name => (
+                    <p className={styles.description} key={name}>{name}</p>
+                  ))
+                ) : (
+                  <p className={styles.description}>Não há músicas disponíveis.</p>
+                )}
+              </div>
+              <div className={styles["card"]}>
+                <h2 style={{ fontWeight: "bold", textAlign: "left" }}>Comidas 😋</h2>
+                {foods.length > 0 ? (
+                  foods.map(name => (
+                    <p className={styles.description} key={name}>{name}</p>
+                  ))
+                ) : (
+                  <p className={styles.description}>Não há comidas disponíveis.</p>
+                )}
+              </div>
+              <div className={styles["card"]}>
+                <h2 style={{ fontWeight: "bold", textAlign: "left" }}>Bebidas 🍷</h2>
+                {drinks.length > 0 ? (
+                  drinks.map(name => (
+                    <p className={styles.description} key={name}>{name}</p>
+                  ))
+                ) : (
+                  <p className={styles.description}>Não há bebidas disponíveis.</p>
+                )}
+              </div>
             </div>
-            <div className={styles["card"]}>
-                <h2 style={{fontWeight: "bold", textAlign: "left"}}>Comidas 😋</h2>
-              {foods.map(name => (
-                <p className={styles.description} key={name}>{name}</p>
-              ))}
-            </div>
-            <div className={styles["card"]}>
-                <h2 style={{fontWeight: "bold", textAlign: "left"}}>Bebidas 🍷</h2>
-              {drinks.map(name => (
-                <p className={styles.description} key={name}>{name}</p>
-              ))}
-            </div>
-          </div>
         );
       };
 
