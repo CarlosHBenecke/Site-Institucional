@@ -38,7 +38,6 @@ function Rotas() {
                     <Route path="/usuarios/adicionarUsuarios" element={<AdicionarUsuarios />} />{/*finalizada?*/}
                     <Route path="/usuarios/editarUsuarios" element={<EditarUsuarios />} />{/*finalizada?*/}
                     <Route path="/listagem" element={<Listagem />} />{/*listagem*/}
-                    <Route path="/estabelecimento-usuario" element={<EstabelecimentoUsuario/>}/>
                     <Route path="/cadastrar-info-empresa/:id" element={<CadastrarInformacoesEmpresa />}/>
                     <Route path="/estabelecimento-dono/:id" element={<EstabelecimentoDono />}/>
                     <Route path="/editar-estabelecimento/:id" element={<EditarEstabelecimento />}/>
