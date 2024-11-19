@@ -49,10 +49,6 @@
       "rewrite": "/index.html"
     },
     {
-      "route": "/estabelecimento-usuario",
-      "rewrite": "/index.html"
-    },
-    {
       "route": "/cadastrar-info-empresa/*.",
       "rewrite": "/index.html"
     },
