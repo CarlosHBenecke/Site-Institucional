@@ -167,11 +167,9 @@ function Cadastrar({idEmpresa}) {
                 establishmentId: id,
                 categories
             };
-
-            console.log(objCadastroCategories);
             const response = await api.put('/establishments/categories', objCadastroCategories);
             console.log(response);
-            toast.success('Dados editados com sucesso!');
+            navigate(`/estabelecimento-dono/${idEmpresa}`)
         } catch (error) {
             toast.error('Erro ao salvar as informações. Por favor, tente novamente.');
             console.error('Erro ao salvar as informações:', error);
