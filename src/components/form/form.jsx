@@ -124,7 +124,8 @@ function Cadastrar({idEmpresa}) {
         }
     };
 
-    const handleSave = async () => {
+    const handleSave = async (e) => {
+        e.preventDefault();
         const categories = [
             ...selectedDrinks.map((item) => ({ categoryType: 3, category: drinks.indexOf(item) + 1 })),
             ...selectedFoods.map((item) => ({ categoryType: 2, category: foods.indexOf(item) + 1 })),
