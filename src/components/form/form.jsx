@@ -162,13 +162,15 @@ function Cadastrar({idEmpresa}) {
             });
 
             // Update categories
-            await api.put('/establishments/categories', {
+            const objCadastroCategories = {
                 establishmentId: id,
                 categories
-            });
+            };
 
+            console.log(objCadastroCategories);
+            const response = await api.put('/establishments/categories', objCadastroCategories);
+            console.log(response);
             toast.success('Dados editados com sucesso!');
-            navigate("/estabelecimento-dono/" + id);
         } catch (error) {
             toast.error('Erro ao salvar as informações. Por favor, tente novamente.');
             console.error('Erro ao salvar as informações:', error);
@@ -176,7 +178,7 @@ function Cadastrar({idEmpresa}) {
     };
 
     const handleCancel = () => {
-        navigate("/estabelecimento");
+        navigate("/");
     };
 
     return (
