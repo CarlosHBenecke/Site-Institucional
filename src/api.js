@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_AUTH_URL
+    baseURL: "https://ec2-50-19-124-224.compute-1.amazonaws.com/api/ms-auth"
 })
 
 export default api;
