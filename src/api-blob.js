@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiBlob = axios.create({
-    baseURL: "https://ec2-18-215-120-62.compute-1.amazonaws.com/api/ms-blob/blob"
+    baseURL: process.env.REACT_APP_API_BLOB_URL
 })
 
 export default apiBlob;
