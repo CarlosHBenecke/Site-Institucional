@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://ec2-98-85-126-117.compute-1.amazonaws.com/api/ms-auth"
+    baseURL: "https://ec2-54-236-223-228.compute-1.amazonaws.com/api/ms-auth"
 })
 
 export default api;
